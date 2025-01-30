@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    font-family:'Times New Roman'
-  </style>
   <head>
+    <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.75" />
     <title>Anna's site!</title>
+
+    <style>
+      header {
+				width: 						100%;
+				margin: 50px 0px 10px 0px;
+				border-width: 				0px;
+				line-height: 				0;				
+				border-style: 				ridge;
+				border-color: 				black;
+				text-align: 				center;
+        background-color: 			#fff ;
+        font-size: 150%;
+			}
+      body{
+        background-color: #ffffff ;
+        font-family:'Courier New';
+      }
+      h1{
+        font-size: 150%
+      }
+      #MARGIN {
+				display: flex;
+				flex-wrap: wrap;
+        background-color: #fff;
+			}
+      .container {
+				display: flex;
+				justify-content: center; 
+				align-items: flex-start;
+				width: 100%;
+        background-color: #fff;
+			}
+      .box {
+	      box-sizing: border-box;  
+	      border: 1px ridge black;
+	      padding: 10px;
+        background-color: #fff ;
+      }
+      .tab {
+        display: flex;
+        overflow: hidden;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        background-color: #fff;
+        width:100%;
+      }
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 8px;
+        transition: 0.3s;
+        font-family:'Courier New';
+        font-size: 17px;
+        flex: 1;  /* Makes each button take equal width */
+        text-align: center;  /* Centers the text within the buttons */
+      }
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: #d9e1ff;
+      }
+    </style> 
   </head>
+  
   <body>
-    <p>Welcome to my site</p>
-  </body>  
+    <div class="container"> 
+    <div id="MARGIN" style="
+			width: 100%;
+      height:	auto;
+			display: flex;
+			flex-wrap: wrap;
+      border:	1px ridge black;
+		">
+      <header>
+        <h1>Anna's Site</h1>
+      </header>
+      <div class="tab">
+          <button class="tablinks" onclick="">Gallery</button>
+          <button class="tablinks" onclick="">Resources</button>
+          <button class="tablinks" onclick="">About</button>
+      </div>
+      <div class="container" style="width:100%; display: flex; flex-direction:row; align-items: stretch;">  
+        <!--OPENING PARAGRAPH BOX-->				              
+          <div class="box" style="width: 50%; height: auto; margin: 5px 5px 5px 5px; padding-top: 0px;">
+              <h1 style="word-wrap: break-word;">
+                  Welcome to my Site
+              </h1>
+              <p style="padding-top: 5px">
+                my virtual space. currently under construction. last update 1/30/2025.
+              </p>
+          </div>
+          <div class="box" style="width: 50%; height: auto; margin: 5px 5px 5px 0px; padding-top: 0px;">
+            <h1 style="word-wrap: break-word;">
+                Featured Picture
+            </h1>
+            <p style="padding-top: 5px">
+              coming soon
+            </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body> 
 </html>
