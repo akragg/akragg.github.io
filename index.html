@@ -21,43 +21,57 @@
       border-style: ridge;
       border-color: black;
       text-align: center;
-      background-color: #fff ;
-      font-size: 150%;
+      background-color: #f1e5db ;
+      font-size: 130%;
     }
-
     body{
-      background-color: #ffffff ;
+      background-color: #a0b4a0;
       font-family: "Bona Nova", serif;
     }
-
     h1{
-      font-size: 150%;
+      font-size: 160%;
     }
-
+    p{
+      margin: 0px;
+      text-align: left;
+      font-size: 110%;
+    }
     .container {
       display: flex;
       justify-content: center; 
       align-items: flex-start;
       width: 100%;
-      background-color: #fff;
+      background-color: #f1e5db;
     }
-
+    #MARGIN {
+			display: flex;
+			flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5vh;
+      align-content: center;
+      text-align: center;
+      background-color: #f1e5db;
+      width: 100%; 
+      max-width: 1000px; 
+      height: auto; 
+      border: 1px ridge black;
+    }
     .box {
       box-sizing: border-box;  
       border: 1px ridge black;
       padding: 10px;
-      background-color: #fff;
+      padding-bottom: 20px;
+      background-color: #f8f5f2;
     }
-
     .tab {
       display: flex;
       overflow: hidden;
       border-top: 1px solid black;
       border-bottom: 1px solid black;
-      background-color: #fff;
+      background-color: #f8f5f2;
       width:100%;
     }
-
     .tab button {
       background-color: inherit;
       float: left;
@@ -72,9 +86,8 @@
       text-align: center;  
     }
     .tab button:hover {
-      background-color: #d9e1ff;
+      background-color: #a0b4a0;
     }
-
     .modal {
       display: none;
       position: fixed;
@@ -86,68 +99,59 @@
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.5);
     }
-
     .modal-content {
-      background-color: #fefefe;
-      margin: 2% auto;
+      background-color: #f1e5db;
+      margin: 5vh auto;
       padding: 20px;
       border: 1px solid #888;
       display: block; 
-      width: 80%;
-      max-width: 90%; 
-      max-height: 90vh; 
+      max-width: 100vh; 
+      max-height: 500vh; 
       overflow: auto; 
     }
-
     .modal img {
       max-width: 100%;
       max-height: 100%;
     }
-
     .close {
       color: #aaa;
       float: right;
       font-size: 28px;
       font-weight: bold;
     }
-
     .close:hover,
     .close:focus {
       color: black;
       text-decoration: none;
       cursor: pointer;
     }
-
     .img-wrapper {
       position: relative;
       display: inline-block;
       text-align: center;
     }
-
     .img-wrapper::after {
       font-size: 12px;
       content: 'Click Image To View Full Size';
       display: block;
       margin-top: 5px;
     }
-
     .img-wrapper img {
       width: 100%;
       max-width: none;
       height: auto;
     }
   </style> 
-  
 </head>
 
 <body>
-  <div id="MARGIN" style="width: 100%; height: auto; display: flex; flex-wrap: wrap; border: 1px ridge black;">
+  <div id="MARGIN">
     <header>
-      <h1>Anna's World</h1>
+      <h1>It's Anna's World</h1> <p style="text-align: center; margin: 35px 0px 15px 0px">...and you're just in it</p>
     </header>
 
     <div class="tab">
-      <button class="tablinks" onclick="">Gallery</button>
+      <button class="tablinks" onclick="window.location.href='https://akragg.github.io/gallery/';">Gallery</a></button>
       <button class="tablinks" onclick="">Resources</button>
       <button class="tablinks" onclick="">About</button>
     </div>
@@ -155,13 +159,14 @@
     <div class="container" style="width:100%; display: flex; flex-direction:row; align-items: stretch;">
       <div class="box" style="width: 50%; height: auto; margin: 5px 5px 5px 5px;">
         <h1>Welcome to my Site</h1>
-        <p>my virtual space. currently under construction. last update 1/31/2025.</p>
+        <p>You have found my current virtual space!</p> 
+        <p style="">Currently under construction. Last update 2/6/2025.</p>
       </div>
 
       <div class="box" style="width: 50%; height: auto; margin: 5px 5px 5px 0px;">
         <h1>Featured Picture</h1>
 
-        <div class="img-wrapper">
+        <div class="img-wrapper" style="margin: 0px 0px 10px 0px;">
           <img id="featuredImg" src="https://raw.githubusercontent.com/akragg/akragg.github.io/refs/heads/main/images/IMG_1681.jpeg" style="width:100%; max-width: 400px; position:relative; justify-content: center;" alt="Featured Image">
         </div>
 
@@ -174,7 +179,7 @@
   <div id="imgModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <img id="modalImg" src="" alt="Full View" style="width: 100%;">
+      <img id="modalImg" src="" alt="Full View">
     </div>
   </div>
 
@@ -189,8 +194,6 @@
       modalImg.src = featuredImg.src;
       modalImg.style.width = 'auto'; 
       modalImg.style.height = 'auto'; 
-      modal.querySelector('.modal-content').style.maxWidth = '90%';
-      modal.querySelector('.modal-content').style.maxHeight = '90%';
     };
   
     closeBtn.onclick = function() {
